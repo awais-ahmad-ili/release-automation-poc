@@ -1,69 +1,194 @@
-# React + TypeScript + Vite
+# 🚀 Release Automation POC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application demonstrating automated CI/CD pipeline with semantic versioning and release automation.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** with **TypeScript** and **Vite**
+- **Automated Testing** with Vitest and React Testing Library
+- **CI/CD Pipeline** with GitHub Actions
+- **Semantic Versioning** and automated releases
+- **Automated Changelog** generation
+- **Code Quality** checks with ESLint and TypeScript
 
-## Expanding the ESLint configuration
+## 🏗️ Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+├── .github/workflows/     # GitHub Actions workflows
+├── src/                   # Source code
+│   ├── test/             # Test setup and utilities
+│   └── App.tsx           # Main application component
+├── public/                # Static assets
+├── .husky/               # Git hooks
+├── vitest.config.ts      # Vitest configuration
+├── .releaserc.json       # Semantic release configuration
+└── package.json          # Dependencies and scripts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd release-automation-poc
 ```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start development server:
+```bash
+npm run dev
+```
+
+## 🧪 Testing
+
+### Run Tests
+```bash
+# Run tests in watch mode
+npm run test
+
+# Run tests once with coverage
+npm run test:ci
+
+# Run tests with UI
+npm run test:ui
+```
+
+### Test Coverage
+The project includes comprehensive test coverage for:
+- Component rendering
+- User interactions
+- State management
+- Component behavior
+
+## 🔧 Development Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+npm run type-check   # Run TypeScript type checking
+npm run test         # Run tests
+npm run test:ci      # Run tests with coverage
+```
+
+## 🚀 CI/CD Pipeline
+
+### Continuous Integration (CI)
+The CI pipeline runs on every push and pull request:
+
+1. **Multi-Node Testing**: Tests against Node.js 18.x, 20.x, and 22.x
+2. **Type Checking**: Ensures TypeScript compilation
+3. **Linting**: Code quality checks with ESLint
+4. **Testing**: Comprehensive test suite execution
+5. **Coverage**: Code coverage reporting
+6. **Build**: Production build verification
+
+### Release Automation
+The release pipeline automatically:
+
+1. **Analyzes Commits**: Determines version bump type
+2. **Generates Changelog**: Creates detailed release notes
+3. **Creates Release**: Publishes to GitHub and npm
+4. **Updates Version**: Bumps package version
+5. **Deploys**: Optional GitHub Pages deployment
+
+### Commit Message Convention
+Follow [Conventional Commits](https://www.conventionalcommits.org/) for automatic versioning:
+
+- `feat:` - New features (minor version)
+- `fix:` - Bug fixes (patch version)
+- `BREAKING CHANGE:` - Breaking changes (major version)
+- `docs:` - Documentation changes
+- `style:` - Code style changes
+- `refactor:` - Code refactoring
+- `test:` - Test additions/changes
+- `chore:` - Build/tooling changes
+
+## 📋 GitHub Actions Workflows
+
+### CI Workflow (`.github/workflows/ci.yml`)
+- Triggers: Push to main/develop, Pull requests
+- Jobs: Testing, Building, Coverage reporting
+- Matrix testing across Node.js versions
+
+### Release Workflow (`.github/workflows/release.yml`)
+- Triggers: Push to main branch
+- Jobs: Testing, Building, Semantic release
+- Optional: GitHub Pages deployment
+
+## 🔐 Environment Variables
+
+The following secrets are required in your GitHub repository:
+
+- `GITHUB_TOKEN`: Automatically provided by GitHub Actions
+- `NPM_TOKEN`: For npm package publishing (if public package)
+
+## 📊 Code Quality
+
+### ESLint Configuration
+- React-specific rules
+- TypeScript support
+- Hooks rules
+- Consistent code style
+
+### TypeScript Configuration
+- Strict mode enabled
+- Modern ES features
+- React JSX support
+- Type checking in CI
+
+## 🎯 Git Hooks
+
+### Pre-commit Hook
+Automatically runs before each commit:
+- Linting
+- Type checking
+- Tests
+
+## 🚀 Deployment
+
+### GitHub Pages
+The application can be automatically deployed to GitHub Pages on each release.
+
+### Build Artifacts
+Build artifacts are uploaded to GitHub Actions for each CI run.
+
+## 📈 Monitoring and Metrics
+
+- **Test Coverage**: Automated coverage reporting
+- **Build Status**: GitHub Actions status checks
+- **Release Tracking**: Automated changelog generation
+- **Performance**: Web Vitals monitoring
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Follow commit message conventions
+5. Push and create a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 🔗 Useful Links
+
+- [React Documentation](https://react.dev/)
+- [Vite Documentation](https://vitejs.dev/)
+- [Vitest Documentation](https://vitest.dev/)
+- [Semantic Release](https://semantic-release.gitbook.io/)
+- [Conventional Commits](https://www.conventionalcommits.org/)
+- [GitHub Actions](https://docs.github.com/en/actions)
