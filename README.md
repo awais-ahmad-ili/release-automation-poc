@@ -1,14 +1,16 @@
 # 🚀 Release Automation POC
 
-A React application demonstrating automated CI/CD pipeline with semantic versioning and release automation.
+A React TypeScript application demonstrating automated CI/CD pipeline with semantic versioning and release automation.
 
 ## ✨ Features
 
-- **React 19** with **TypeScript** and **Vite**
+- **React 18** with **TypeScript** and **Vite**
 - **Automated Testing** with Vitest and React Testing Library
 - **CI/CD Pipeline** with GitHub Actions
 - **Semantic Versioning** and automated releases
 - **Automated Changelog** generation
+- **Release Notes** generation
+- **Conventional Commits** enforcement
 - **Code Quality** checks with ESLint and TypeScript
 
 ## 🏗️ Project Structure
@@ -22,6 +24,7 @@ A React application demonstrating automated CI/CD pipeline with semantic version
 ├── .husky/               # Git hooks
 ├── vitest.config.ts      # Vitest configuration
 ├── .releaserc.json       # Semantic release configuration
+├── commitlint.config.js  # Commit message validation rules
 └── package.json          # Dependencies and scripts
 ```
 
@@ -81,6 +84,7 @@ npm run lint         # Run ESLint
 npm run type-check   # Run TypeScript type checking
 npm run test         # Run tests
 npm run test:ci      # Run tests with coverage
+npm run commit       # Interactive conventional commit
 ```
 
 ## 🚀 CI/CD Pipeline
@@ -116,17 +120,46 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/) for automati
 - `test:` - Test additions/changes
 - `chore:` - Build/tooling changes
 
+### Commit Enforcement
+This project enforces conventional commit format using:
+
+- **Commitizen**: Interactive commit creation (`npm run commit`)
+- **Commitlint**: Validates commit message format
+- **Husky**: Git hooks to enforce rules
+
+#### Commit Types
+- `feat` - New features
+- `fix` - Bug fixes
+- `docs` - Documentation changes
+- `style` - Code style changes
+- `refactor` - Code refactoring
+- `perf` - Performance improvements
+- `test` - Adding or updating tests
+- `build` - Build system changes
+- `ci` - CI/CD changes
+- `chore` - Other changes
+
+#### Examples
+```bash
+feat: add user authentication
+fix(auth): resolve login button issue
+docs: update README with new features
+BREAKING CHANGE: remove deprecated API
+```
+
 ## 📋 GitHub Actions Workflows
 
 ### CI Workflow (`.github/workflows/ci.yml`)
 - Triggers: Push to main/develop, Pull requests
 - Jobs: Testing, Building, Coverage reporting
 - Matrix testing across Node.js versions
+- Uploads build artifacts for release workflow
 
 ### Release Workflow (`.github/workflows/release.yml`)
-- Triggers: Push to main branch
-- Jobs: Testing, Building, Semantic release
-- Optional: GitHub Pages deployment
+- Triggers: After successful CI workflow completion
+- Jobs: Semantic release automation
+- Downloads build artifacts from CI
+- Creates GitHub release and tags
 
 ## 🔐 Environment Variables
 
@@ -157,6 +190,10 @@ Automatically runs before each commit:
 - Type checking
 - Tests
 
+### Commit-msg Hook
+- Validates conventional commit format
+- Enforces commit message rules
+
 ## 🚀 Deployment
 
 ### GitHub Pages
@@ -176,7 +213,7 @@ Build artifacts are uploaded to GitHub Actions for each CI run.
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
+3. Make your changes with conventional commits
 4. Follow commit message conventions
 5. Push and create a pull request
 
