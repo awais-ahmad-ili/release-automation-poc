@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.1.0...v1.1.1) (2025-08-27)
+
+
+### Bug Fixes
+
+* package versions and ci fixed ([49075b8](https://github.com/awais-ahmad-ili/release-automation-poc/commit/49075b83d6f8788c7eb789467c3afcd39571ff11))
+* resolved lint issues by updating package versions ([0ebec56](https://github.com/awais-ahmad-ili/release-automation-poc/commit/0ebec56672f08aea544d057d8be407233f858374))
+* updated eslint config to exclude coverage folder ([40675f5](https://github.com/awais-ahmad-ili/release-automation-poc/commit/40675f5f1b0088bb2e7ef197c315ca42788a166e))
+
 # [1.1.0](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.0.1...v1.1.0) (2025-08-27)
 
 
