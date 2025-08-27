@@ -19,10 +19,8 @@ if [ -z "$husky_skip_init" ]; then
     . ~/.huskyrc
   fi
 
-  readonly husky_root="$(dirname -- "$0")/../.."
-  readonly husky_git_params="$*"
-
-  export readonly husky_skip_init=1
+  readonly husky_skip_init=1
+  export husky_skip_init
   sh -e "$0" "$@"
   exitCode="$?"
 
