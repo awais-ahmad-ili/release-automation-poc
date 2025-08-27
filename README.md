@@ -87,6 +87,86 @@ npm run test:ci      # Run tests with coverage
 npm run commit       # Interactive conventional commit
 ```
 
+## 📝 Git Commit Message Format Enforcement
+
+This project **strictly enforces** conventional commit message format to ensure consistent versioning and automated releases.
+
+### 🔒 Enforcement Tools
+
+- **Commitizen**: Interactive commit creation with guided prompts
+- **Commitlint**: Validates commit message format against rules
+- **Husky**: Git hooks that run automatically on commit
+
+### 📋 Required Commit Format
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### ✅ Allowed Commit Types
+
+- `feat` - New features (triggers minor version bump)
+- `fix` - Bug fixes (triggers patch version bump)
+- `docs` - Documentation changes
+- `style` - Code style changes (formatting, etc.)
+- `refactor` - Code refactoring
+- `perf` - Performance improvements
+- `test` - Adding or updating tests
+- `build` - Build system changes
+- `ci` - CI/CD changes
+- `chore` - Other changes that don't modify src or test files
+- `revert` - Reverts a previous commit
+
+### 📝 Examples
+
+```bash
+# ✅ Valid commits
+feat: add user authentication system
+fix(auth): resolve login button not responding
+docs: update API documentation
+test: add unit tests for user component
+BREAKING CHANGE: remove deprecated API endpoints
+
+# ❌ Invalid commits (will be rejected)
+update readme
+fixed bug
+added new feature
+```
+
+### 🛡️ How Enforcement Works
+
+1. **Pre-commit Hook**: Runs linting, type checking, and tests
+2. **Commit-msg Hook**: Validates commit message format
+3. **Automatic Rejection**: Invalid commits are blocked with helpful error messages
+
+### 🚀 Making Commits
+
+#### Option 1: Interactive Commit (Recommended)
+```bash
+npm run commit
+```
+This will guide you through creating a proper conventional commit.
+
+#### Option 2: Manual Commit
+```bash
+git commit -m "type: description"
+```
+Must follow the conventional commit format exactly.
+
+### ⚠️ What Happens If You Try Invalid Commits
+
+If you attempt to commit with an invalid message, you'll see an error like:
+```
+✖   subject may not be empty [subject-empty]
+✖   type may not be empty [type-empty]
+✖   found 2 problems, 0 warnings
+husky - commit-msg hook exited with code 1 (error)
+```
+
 ## 🚀 CI/CD Pipeline
 
 ### Continuous Integration (CI)
