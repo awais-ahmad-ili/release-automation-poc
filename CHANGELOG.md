@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.2.0...v1.2.1) (2025-08-28)
+
+
+### Bug Fixes
+
+* removed reset button ([1d0de58](https://github.com/awais-ahmad-ili/release-automation-poc/commit/1d0de58d4498db0975a4acbf49d0a6d613693286))
+
 # [1.2.0](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.1.1...v1.2.0) (2025-08-27)
 
 
