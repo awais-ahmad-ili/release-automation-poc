@@ -21,9 +21,9 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <button onClick={() => setCount(0)} style={{ marginLeft: '10px' }}>
+        {/* <button onClick={() => setCount(0)} style={{ marginLeft: '10px' }}>
           Reset
-        </button>
+        </button> */}
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
