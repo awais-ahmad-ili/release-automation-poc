@@ -123,6 +123,8 @@ git commit -m "BREAKING CHANGE: remove deprecated API"
 
 ### Release Automation
 
+asd123
+
 - Analyzes commits for version bump type
 - Generates changelog and release notes
 - Creates GitHub release and npm package
