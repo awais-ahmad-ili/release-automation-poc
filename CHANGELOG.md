@@ -12,6 +12,21 @@
 
 * added reset button ([5339525](https://github.com/awais-ahmad-ili/release-automation-poc/commit/5339525afc7b0c0ff5004c2967a3572f275df619))
 
+## [1.3.0](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.2.1...v1.3.0) (2025-08-29)
+
+
+### Features
+
+* added release-please ([75b332d](https://github.com/awais-ahmad-ili/release-automation-poc/commit/75b332d558df3d3902c521eb6e90b765a92fa2fb))
+
+
+### Bug Fixes
+
+* release-please config ([27c615a](https://github.com/awais-ahmad-ili/release-automation-poc/commit/27c615a74acc82ea633f22152fae2d187b37f391))
+* release-please config ([a77689b](https://github.com/awais-ahmad-ili/release-automation-poc/commit/a77689be6226c521b6f8d8a7b6b4e6b86273a5d0))
+* release-please config ([d47745f](https://github.com/awais-ahmad-ili/release-automation-poc/commit/d47745f25b05249dacd2c8cee65cc3c2efc13562))
+* release-please config ([1fb5723](https://github.com/awais-ahmad-ili/release-automation-poc/commit/1fb5723d47fda57c10e0bce97c22c712b09482aa))
+
 ## [1.1.1](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.1.0...v1.1.1) (2025-08-27)
 
 
