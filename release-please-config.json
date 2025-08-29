@@ -1,5 +1,4 @@
 {
-  "bootstrap-sha": "abcdef1234567890",
   "changelog-path": "CHANGELOG.md",
   "release-type": "node",
   "branches": [
