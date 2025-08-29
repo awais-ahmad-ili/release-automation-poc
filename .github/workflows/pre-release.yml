@@ -1,0 +1,44 @@
+name: Preview Release
+
+on:
+  pull_request:
+    types: [labeled, synchronize]
+
+jobs:
+  preview:
+    if: github.event.label.name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Semantic Release (dry-run)
+        id: semantic
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx semantic-release --dry-run > semantic_output.txt
+          echo "output<<EOF" >> $GITHUB_ENV
+          cat semantic_output.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Comment PR with release notes
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: preview-release
+          message: |
+            🔮 **Semantic Release Preview**
+
+            Next version:  
+            \`\`\`
+            ${{ env.output }}
+            \`\`\`
+
+            _(this is a preview, actual release will be created after merge to main)_
