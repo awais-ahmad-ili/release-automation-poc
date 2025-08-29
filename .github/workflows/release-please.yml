@@ -3,10 +3,11 @@ name: Create Release PR
 
 on:
   workflow_dispatch: {} # manual trigger; pick branch in the UI
-
-permissions:
-  contents: write
-  pull-requests: write
+  push:
+    branches:
+      - main
+      - staging
+      - dev
 
 jobs:
   release-please:
