@@ -1,17 +1,28 @@
 name: Commitlint
+
 on:
   pull_request:
-    branches: [main, staging, dev]
-  push:
-    branches: [main, staging, dev]
+    types: [opened, synchronize, reopened, edited]
 
 jobs:
-  commitlint:
+  lint-commits:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Node.js
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # need full history
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
-        with: { node-version: 20 }
-      - run: npm ci
-      - run: npx commitlint --from=origin/${{ github.base_ref || 'HEAD~10' }} --to=HEAD --verbose
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run commitlint on PR commits
+        run: |
+          BASE_BRANCH=${{ github.event.pull_request.base.ref }}
+          npx commitlint --from origin/$BASE_BRANCH --to HEAD --verbose
