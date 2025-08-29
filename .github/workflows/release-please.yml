@@ -16,13 +16,7 @@ jobs:
         id: rp
         uses: googleapis/release-please-action@v4
         with:
-          # The branch you chose in the dispatch UI (e.g., main, staging, dev)
-          target-branch: ${{ github.ref_name }}
-          # Use manifest-based (advanced) config below
+          release-type: node
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+          # 👇 Important: ensure you're not using `command: manifest`
           config-file: release-please-config.json
-
-      - name: Show outputs (optional)
-        if: ${{ steps.rp.outputs.prs_created == 'true' }}
-        run: |
-          echo "Release PR(s) created."
-          echo '${{ steps.rp.outputs.prs }}'
