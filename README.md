@@ -30,10 +30,12 @@ A React TypeScript application demonstrating automated CI/CD pipeline with seman
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
+
 ```bash
 git clone <your-repo-url>
 cd release-automation-poc
@@ -65,6 +67,7 @@ npm run commit       # Interactive conventional commit
 This project enforces [Conventional Commits](https://www.conventionalcommits.org/) for automated versioning and releases.
 
 ### Commit Format
+
 ```
 <type>[optional scope]: <description>
 
@@ -74,6 +77,7 @@ This project enforces [Conventional Commits](https://www.conventionalcommits.org
 ```
 
 ### Commit Types
+
 - `feat` - New features (minor version)
 - `fix` - Bug fixes (patch version)
 - `docs` - Documentation changes
@@ -89,11 +93,13 @@ This project enforces [Conventional Commits](https://www.conventionalcommits.org
 ### Making Commits
 
 **Interactive (Recommended):**
+
 ```bash
 npm run commit
 ```
 
 **Manual:**
+
 ```bash
 git commit -m "feat: add new feature"
 git commit -m "fix(auth): resolve login issue"
@@ -101,6 +107,7 @@ git commit -m "BREAKING CHANGE: remove deprecated API"
 ```
 
 ### Enforcement
+
 - **Commitizen**: Interactive commit creation
 - **Commitlint**: Validates commit message format
 - **Husky**: Git hooks that run automatically
@@ -108,12 +115,14 @@ git commit -m "BREAKING CHANGE: remove deprecated API"
 ## 🚀 CI/CD Pipeline
 
 ### Continuous Integration
+
 - Multi-Node testing (18.x, 20.x, 22.x)
 - Type checking and linting
 - Test coverage reporting
 - Build verification
 
 ### Release Automation
+
 - Analyzes commits for version bump type
 - Generates changelog and release notes
 - Creates GitHub release and npm package
