@@ -132,6 +132,8 @@ git commit -m "BREAKING CHANGE: remove deprecated API"
 
 - **CI Workflow**: Runs on push/PR with testing and building
 - **Release Workflow**: Triggers after successful CI for semantic releases
+  asdasdadasdad
+  csadasd
 
 ## 🔐 Environment Variables
 
