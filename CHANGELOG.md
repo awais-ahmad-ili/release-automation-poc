@@ -12,6 +12,14 @@
 
 * added reset button ([5339525](https://github.com/awais-ahmad-ili/release-automation-poc/commit/5339525afc7b0c0ff5004c2967a3572f275df619))
 
+## [1.3.2](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.3.1...v1.3.2) (2025-08-29)
+
+
+### Bug Fixes
+
+* test1 ([74cd912](https://github.com/awais-ahmad-ili/release-automation-poc/commit/74cd9125c952a63c83029a0881a789b4834d36e8))
+* test2 ([9656673](https://github.com/awais-ahmad-ili/release-automation-poc/commit/9656673efdd4bc4555cd5f167ac0ea39bc155544))
+
 ## [1.3.1](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.3.0...v1.3.1) (2025-08-29)
 
 
