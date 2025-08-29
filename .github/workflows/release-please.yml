@@ -16,8 +16,6 @@ jobs:
         id: rp
         uses: googleapis/release-please-action@v4
         with:
-          # Use a PAT so Release PRs and releases trigger your other workflows
-          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
           # The branch you chose in the dispatch UI (e.g., main, staging, dev)
           target-branch: ${{ github.ref_name }}
           # Use manifest-based (advanced) config below
