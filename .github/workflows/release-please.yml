@@ -20,7 +20,6 @@ jobs:
           target-branch: ${{ github.ref_name }}
           # Use manifest-based (advanced) config below
           config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
 
       - name: Show outputs (optional)
         if: ${{ steps.rp.outputs.prs_created == 'true' }}
