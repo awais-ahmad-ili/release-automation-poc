@@ -128,6 +128,8 @@ git commit -m "BREAKING CHANGE: remove deprecated API"
 - Creates GitHub release and npm package
 - Optional GitHub Pages deployment
 
+asdadasdasaaaaaaa
+
 ## 📋 GitHub Actions Workflows
 
 - **CI Workflow**: Runs on push/PR with testing and building
