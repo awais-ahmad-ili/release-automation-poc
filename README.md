@@ -1,14 +1,15 @@
 # 🚀 Release Automation POC
 
-A React application demonstrating automated CI/CD pipeline with semantic versioning and release automation.
+A React TypeScript application demonstrating automated CI/CD pipeline with semantic versioning and release automation.
 
 ## ✨ Features
 
-- **React 19** with **TypeScript** and **Vite**
+- **React 18** with **TypeScript** and **Vite**
 - **Automated Testing** with Vitest and React Testing Library
 - **CI/CD Pipeline** with GitHub Actions
 - **Semantic Versioning** and automated releases
 - **Automated Changelog** generation
+- **Conventional Commits** enforcement
 - **Code Quality** checks with ESLint and TypeScript
 
 ## 🏗️ Project Structure
@@ -22,6 +23,7 @@ A React application demonstrating automated CI/CD pipeline with semantic version
 ├── .husky/               # Git hooks
 ├── vitest.config.ts      # Vitest configuration
 ├── .releaserc.json       # Semantic release configuration
+├── commitlint.config.js  # Commit message validation rules
 └── package.json          # Dependencies and scripts
 ```
 
@@ -29,47 +31,25 @@ A React application demonstrating automated CI/CD pipeline with semantic version
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
-1. Clone the repository:
 ```bash
 git clone <your-repo-url>
 cd release-automation-poc
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Start development server:
-```bash
 npm run dev
 ```
 
 ## 🧪 Testing
 
-### Run Tests
 ```bash
-# Run tests in watch mode
-npm run test
-
-# Run tests once with coverage
-npm run test:ci
-
-# Run tests with UI
-npm run test:ui
+npm run test          # Run tests in watch mode
+npm run test:ci       # Run tests with coverage
+npm run test:ui       # Run tests with UI
 ```
-
-### Test Coverage
-The project includes comprehensive test coverage for:
-- Component rendering
-- User interactions
-- State management
-- Component behavior
 
 ## 🔧 Development Scripts
 
@@ -79,106 +59,91 @@ npm run build        # Build for production
 npm run preview      # Preview production build
 npm run lint         # Run ESLint
 npm run type-check   # Run TypeScript type checking
-npm run test         # Run tests
-npm run test:ci      # Run tests with coverage
+npm run commit       # Interactive conventional commit
 ```
+
+## 📝 Conventional Commits
+
+This project enforces [Conventional Commits](https://www.conventionalcommits.org/) for automated versioning and releases.
+
+### Commit Format
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Commit Types
+
+- `feat` - New features (minor version)
+- `fix` - Bug fixes (patch version)
+- `docs` - Documentation changes
+- `style` - Code style changes
+- `refactor` - Code refactoring
+- `perf` - Performance improvements
+- `test` - Adding or updating tests
+- `build` - Build system changes
+- `ci` - CI/CD changes
+- `chore` - Other changes
+- `revert` - Reverts a previous commit
+
+### Making Commits
+
+**Interactive (Recommended):**
+
+```bash
+npm run commit
+```
+
+**Manual:**
+
+```bash
+git commit -m "feat: add new feature"
+git commit -m "fix(auth): resolve login issue"
+git commit -m "BREAKING CHANGE: remove deprecated API"
+```
+
+### Enforcement
+
+- **Commitizen**: Interactive commit creation
+- **Commitlint**: Validates commit message format
+- **Husky**: Git hooks that run automatically
 
 ## 🚀 CI/CD Pipeline
 
-### Continuous Integration (CI)
-The CI pipeline runs on every push and pull request:
+### Continuous Integration
 
-1. **Multi-Node Testing**: Tests against Node.js 18.x, 20.x, and 22.x
-2. **Type Checking**: Ensures TypeScript compilation
-3. **Linting**: Code quality checks with ESLint
-4. **Testing**: Comprehensive test suite execution
-5. **Coverage**: Code coverage reporting
-6. **Build**: Production build verification
+- Multi-Node testing (18.x, 20.x, 22.x)
+- Type checking and linting
+- Test coverage reporting
+- Build verification
 
 ### Release Automation
-The release pipeline automatically:
 
-1. **Analyzes Commits**: Determines version bump type
-2. **Generates Changelog**: Creates detailed release notes
-3. **Creates Release**: Publishes to GitHub and npm
-4. **Updates Version**: Bumps package version
-5. **Deploys**: Optional GitHub Pages deployment
+- Analyzes commits forasdasd version bump type
+- Generates changelog and release notes
+- Creates GitHub release and npm package
+- Optional GitHub Pages deployment
 
-### Commit Message Convention
-Follow [Conventional Commits](https://www.conventionalcommits.org/) for automatic versioning:
-
-- `feat:` - New features (minor version)
-- `fix:` - Bug fixes (patch version)
-- `BREAKING CHANGE:` - Breaking changes (major version)
-- `docs:` - Documentation changes
-- `style:` - Code style changes
-- `refactor:` - Code refactoring
-- `test:` - Test additions/changes
-- `chore:` - Build/tooling changes
+asdadasdasaaaaaaa
 
 ## 📋 GitHub Actions Workflows
 
-### CI Workflow (`.github/workflows/ci.yml`)
-- Triggers: Push to main/develop, Pull requests
-- Jobs: Testing, Building, Coverage reporting
-- Matrix testing across Node.js versions
-
-### Release Workflow (`.github/workflows/release.yml`)
-- Triggers: Push to main branch
-- Jobs: Testing, Building, Semantic release
-- Optional: GitHub Pages deployment
+- **CI Workflow**: Runs on push/PR with testing and building
+- **Release Workflow**: Triggers after successful CI for semantic releases
 
 ## 🔐 Environment Variables
-
-The following secrets are required in your GitHub repository:
 
 - `GITHUB_TOKEN`: Automatically provided by GitHub Actions
 - `NPM_TOKEN`: For npm package publishing (if public package)
 
-## 📊 Code Quality
-
-### ESLint Configuration
-- React-specific rules
-- TypeScript support
-- Hooks rules
-- Consistent code style
-
-### TypeScript Configuration
-- Strict mode enabled
-- Modern ES features
-- React JSX support
-- Type checking in CI
-
-## 🎯 Git Hooks
-
-### Pre-commit Hook
-Automatically runs before each commit:
-- Linting
-- Type checking
-- Tests
-
-## 🚀 Deployment
-
-### GitHub Pages
-The application can be automatically deployed to GitHub Pages on each release.
-
-### Build Artifacts
-Build artifacts are uploaded to GitHub Actions for each CI run.
-
-## 📈 Monitoring and Metrics
-
-- **Test Coverage**: Automated coverage reporting
-- **Build Status**: GitHub Actions status checks
-- **Release Tracking**: Automated changelog generation
-- **Performance**: Web Vitals monitoring
-
-## 🤝 Contributing
-
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
-4. Follow commit message conventions
-5. Push and create a pull request
+3. Make changes with conventional commits
+4. Push and create a pull request
 
 ## 📝 License
 
@@ -188,7 +153,6 @@ This project is licensed under the MIT License.
 
 - [React Documentation](https://react.dev/)
 - [Vite Documentation](https://vitejs.dev/)
-- [Vitest Documentation](https://vitest.dev/)
 - [Semantic Release](https://semantic-release.gitbook.io/)
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [GitHub Actions](https://docs.github.com/en/actions)

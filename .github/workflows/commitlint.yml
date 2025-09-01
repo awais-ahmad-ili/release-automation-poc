@@ -1,0 +1,28 @@
+name: Commitlint
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  lint-commits:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # need full history
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run commitlint on PR commits
+        run: |
+          BASE_BRANCH=${{ github.event.pull_request.base.ref }}
+          npx commitlint --from origin/$BASE_BRANCH --to HEAD --verbose
