@@ -12,6 +12,36 @@
 
 * added reset button ([5339525](https://github.com/awais-ahmad-ili/release-automation-poc/commit/5339525afc7b0c0ff5004c2967a3572f275df619))
 
+## [1.4.0](https://github.com/awais-ahmad-ili/release-automation-poc/compare/v1.3.2...v1.4.0) (2025-09-01)
+
+
+### Features
+
+* test adasda ([47c0566](https://github.com/awais-ahmad-ili/release-automation-poc/commit/47c0566aee01c6135fd0e7b7c881cba889d4dbc1))
+* test123 ([3cbc8e3](https://github.com/awais-ahmad-ili/release-automation-poc/commit/3cbc8e3ea8fe1d1ce662f08037098d0686814e27))
+
+
+### Bug Fixes
+
+* configs ([a17e8df](https://github.com/awais-ahmad-ili/release-automation-poc/commit/a17e8df3c1e30562aca2230e87c9a64ae4510d64))
+* configs fix ([f3422a0](https://github.com/awais-ahmad-ili/release-automation-poc/commit/f3422a0f89bcc42d154ef139bb6d040843906c29))
+* fixed readme ([92c39da](https://github.com/awais-ahmad-ili/release-automation-poc/commit/92c39daa21de8b149a3fdc06ee3d78d91f516457))
+* fixes 12321 ([73eaa3e](https://github.com/awais-ahmad-ili/release-automation-poc/commit/73eaa3e3a78e9162f4b6aff6e589f7326dccf04d))
+* test ([faaac24](https://github.com/awais-ahmad-ili/release-automation-poc/commit/faaac243f15a11858638590ad64dce71bab9f104))
+* test123 ([9a0f06a](https://github.com/awais-ahmad-ili/release-automation-poc/commit/9a0f06a7cca942a8034655f7975dad99191fb6b9))
+* test345345 ([ab3f92f](https://github.com/awais-ahmad-ili/release-automation-poc/commit/ab3f92f526bce3ffbbc4c4f8ee8f852247ee411f))
+
+
+### Miscellaneous
+
+* add commit lint ([45b5d0d](https://github.com/awais-ahmad-ili/release-automation-poc/commit/45b5d0dccafc993c41a68f54b951c97891109dd5))
+* fix commitlint config to use ES modules ([7a8e61d](https://github.com/awais-ahmad-ili/release-automation-poc/commit/7a8e61d53cef905ddf3ba8cc46be97c91da8505c))
+* **main:** release 1.4.0 ([901342b](https://github.com/awais-ahmad-ili/release-automation-poc/commit/901342b7e43580c250e82ea29a2b1eb9b77e9cc5))
+* **main:** release 1.4.0 ([c9b3749](https://github.com/awais-ahmad-ili/release-automation-poc/commit/c9b37498712f7763946a29a622aa10601e7d200c))
+* release main ([e188d59](https://github.com/awais-ahmad-ili/release-automation-poc/commit/e188d5999ce4d96d43bb107522c3d99089c54d75))
+* release main ([a58e678](https://github.com/awais-ahmad-ili/release-automation-poc/commit/a58e6780d55d408fa3027187246382f64e003bb4))
+* removed commit lint ([f2473c5](https://github.com/awais-ahmad-ili/release-automation-poc/commit/f2473c504c9dd377b09deeade0e3b896da3a6bf5))
+
 ## 1.0.0 (2025-09-01)
 
 
