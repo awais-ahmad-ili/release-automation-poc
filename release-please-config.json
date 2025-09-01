@@ -1,6 +1,10 @@
 {
-  "changelog-path": "CHANGELOG.md",
-  "release-type": "node",
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "changelog-path": "CHANGELOG.md"
+    }
+  },
   "branches": [
     {
       "branch": "main"
@@ -8,12 +12,13 @@
     {
       "branch": "staging",
       "prerelease": true,
-      "prerelease-type": "rc"
+      "prerelease-type": "rc",
+      "changelog-path": null
     },
     {
       "branch": "dev",
       "prerelease": true,
-      "prerelease-type": "dev"
+      "changelog-path": null
     }
   ]
 }

@@ -138,8 +138,6 @@ git commit -m "BREAKING CHANGE: remove deprecated API"
 - `GITHUB_TOKEN`: Automatically provided by GitHub Actions
 - `NPM_TOKEN`: For npm package publishing (if public package)
 
-## 🤝 Contributing
-
 1. Fork the repository
 2. Create a feature branch
 3. Make changes with conventional commits
