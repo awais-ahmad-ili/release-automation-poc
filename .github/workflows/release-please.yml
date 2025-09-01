@@ -17,9 +17,16 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+
       - name: Release Please
         id: rp
         uses: googleapis/release-please-action@v4
         with:
           config-file: release-please-config.json
           token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+          manifest-file: .release-please-manifest.json
