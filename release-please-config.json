@@ -12,13 +12,11 @@
     {
       "branch": "staging",
       "prerelease": true,
-      "prerelease-type": "rc",
-      "changelog-path": null
+      "prerelease-type": "rc"
     },
     {
       "branch": "dev",
-      "prerelease": true,
-      "changelog-path": null
+      "prerelease": true
     }
   ]
 }
