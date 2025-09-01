@@ -41,5 +41,7 @@
   "separate-pull-requests": false,
   "tag-separator": "-",
   "include-v-in-tag": true,
-  "skip-github-release": false
+  "skip-github-release": false,
+  "bootstrap-sha": "a17e8df3c1e30562aca2230e87c9a64ae4510d64",
+  "last-release-sha": "a17e8df3c1e30562aca2230e87c9a64ae4510d64"
 }
